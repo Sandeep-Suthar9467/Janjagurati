@@ -13,13 +13,721 @@
           </div>
         {% endif %}
       </div>
-      <h2 class="article-title">{{ object.name }}</h2>
+
+        <div class="container px-4 lg:px-0 mx-auto  pb-24 pt-4" style='margin-top:80px'>
+            <div class="hidden lg:block">
+                <div><button aria-label="Indigo Button" class=" flex items-center  px-5 py-2.5 text-base  rounded-md   undefined undefined border-0 bg-transparent !p-0  text-indigo-600 hover:text-indigo-800   transition ease-in-out font-medium leading-none my-2 ml-1 opacity-80 
+            undefined " title=""><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16"
+                            class="mr-2 inline-block  opacity-80 w-5 h-5 !mr-1" height="1em" width="1em"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z">
+                            </path>
+                        </svg>Back</button>
+                    <div
+                        class=" h-screen w-screen bg-black/20 fixed top-0 left-0 z-[50] opacity-0 hidden transform transition-all ease-in-out  ">
+                        <div class="relative flex flex-col items-center justify-center h-full">
+                            <div
+                                class="relative bg-white rounded-lg shadow max-w-[90%] md:max-w-[60%] lg:min-w-[30%] max-h-[80vh] overflow-auto">
+                                <div class="p-8 text-center"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                        viewBox="0 0 24 24" class="mx-auto w-10 h-10 mb-3  text-red-600" height="1em"
+                                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill="none" d="M0 0h24v24H0z"></path>
+                                        <path
+                                            d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5a2 2 0 00-2 2v4h2V5h14v14H5v-4H3v4a2 2 0 002 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z">
+                                        </path>
+                                    </svg>
+                                    <h3 class=" font-normal text-gray-800">You need to login before applying for schemes
+                                    </h3>
+                                </div>
+                                <div class="bg-gray-100 p-4 flex justify-center rounded-b-lg">
+                                    <div class="flex
+         gap-2 
+         justify-between w-full "><button type="button" aria-label="White Button" class=" px-5 py-2.5 text-base  rounded-md   undefined undefined bg-white border-solid border border-cyan-200 text-gray-800 hover:border-cyan-400 hover:shadow   transition ease-in-out font-medium leading-none flex-1 
+            undefined " title="">Cancel</button><button type="button" aria-label="Success Button" class=" px-5 py-2.5 text-base  rounded-md   undefined undefined bg-green-600 text-white hover:bg-green-700   transition ease-in-out font-medium leading-none flex-1 
+            undefined " title="">Login</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" gap-4  grid grid-cols-1 lg:!grid-cols-5 !gap-x-6 md:grid-cols-2  lg:grid-cols-4 undefined">
+                        <div class=" flex-1 ">
+                            <div class=" sticky top-24">
+                                <ul class="">
+                                  {% for key in fields %}
+                                    <a 
+                                        href="#{{key}}"
+                                        class="side-tabs rounded-md text-opacity-100 op-full-imp cursor-pointer bg-gray-100/50 font-semibold text-gray-800 ">
+                                        <span class="flex w-full px-4 py-2 mb-5 bg-opacity-70 text-txt-menu">{{key}}</span>
+                                </a>
+                                   {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-span-5 md:col-span-3">
+                            <div id="scrollDiv">
+                                <div>
+                                    <div
+                                        class="h-screen w-screen bg-black/20 fixed top-0 left-0 z-50  transform  transition-all ease-in-out  translate-x-full   ">
+                                        <div class="relative h-full w-full right-0 overflow-y-auto">
+                                            <div class="absolute w-full h-full md:w-[70%] lg:w-[60%] xl:w-[50%]  overflow-y-auto right-0 bg-white px-6 pt-4 pb-6 rounded-tl-lg rounded-bl-lg 
+            translate-x-full">
+                                                <div
+                                                    class="flex flex-row items-center justify-between border-0 border-solid border-b-2 border-b-cyan-300 pb-2">
+                                                    <h3 class="font-bold text-lg sm:text-xl ">Check Eligibility</h3><svg
+                                                        stroke="currentColor" fill="currentColor" stroke-width="0"
+                                                        viewBox="0 0 24 24" class="text-green-600 cursor-pointer font-bold"
+                                                        height="25" width="25" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill="none" d="M0 0h24v24H0z"></path>
+                                                        <path
+                                                            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+                                                        </path>
+                                                    </svg>
+                                                </div>
+                                                <div class="pr-2 pb-4 h-full">
+                                                    <h2 class="font-bold text-lg sm:text-xl text-green-500 text-center mt-2"
+                                                        title={{ object.name
+                                                        }}>{{ object.name
+                                                        }}</h2><iframe height="95%" width="100%" src=""></iframe>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class=" gap-0  grid grid-cols-1 !grid-cols-1 bg-white border border-solid border-gray-200 rounded-md w-full gap-0rounded-2xl md:grid-cols-2  lg:grid-cols-4 undefined">
+                                        <div
+                                            class=" grid grid-cols-1 md:flex flex-wrap  gap-4  justify-between items-center  p-3 md:px-6 pt-6 pb-0 !items-start relative">
+                                            <div class="w-full  border-0 border-b border-solid border-gray-100 pb-4 ">
+                                                <div class="w-full flex flex-row justify-between items-start mb-5">
+                                                    <div class="flex-1">
+                                                        <h2 class="text-darkIndigo-900 text-sm">{{object.nodalMinistry}}</h2>
+                                                        <h1 class="font-bold text-green-600 text-xl sm:text-2xl mt-1"
+                                                            title={{ object.name
+                                                            }}>{{ object.name}}</h1>
+                                                    </div>
+                                                    <div
+                                                        class=" grid grid-cols-1 md:flex flex-wrap  gap-4  justify-between items-center hidden !gap-1">
+                                                        <div class=" relative">
+                                                            <div class="flex flex-wrap">
+                                                                <div class="w-full text-center"><button id="popContainer1"
+                                                                        title="Copy"
+                                                                        class="active:bg-indigo-600 border border-solid w-8 h-8 flex justify-center items-center rounded-full hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150 bg-transparent border-amber-200 hover:border-amber-300 text-amber-600"
+                                                                        type="button"><svg stroke="currentColor" fill="none"
+                                                                            stroke-width="2" viewBox="0 0 24 24"
+                                                                            stroke-linecap="round" stroke-linejoin="round"
+                                                                            height="16" width="16"
+                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                            <path
+                                                                                d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71">
+                                                                            </path>
+                                                                            <path
+                                                                                d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71">
+                                                                            </path>
+                                                                        </svg></button></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class=" relative">
+                                                            <div class="flex flex-wrap">
+                                                                <div class="w-full text-center"><button id="popContainer2"
+                                                                        title="Share"
+                                                                        class="active:bg-indigo-600 border border-solid w-8 h-8 flex justify-center items-center rounded-full hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150 bg-transparent border-fuchsia-200 hover:border-fuchsia-300 text-fuchsia-600"
+                                                                        type="button"><svg stroke="currentColor"
+                                                                            fill="currentColor" stroke-width="0"
+                                                                            viewBox="0 0 24 24" height="16" width="16"
+                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                            <path fill="none" d="M0 0h24v24H0z"></path>
+                                                                            <path
+                                                                                d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z">
+                                                                            </path>
+                                                                        </svg></button></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {% for tag in object.category.all %}
+                  <a
+                    href="{% url 'tagged' tag.slug %}"
+                    class="mr-1 badge badge-info"
+                    >#{{ tag }}</a
+                  >
+                  <!-- <div title="Agricultural Inputs"
+                                          class=" text-gray-800 bg-gray-200 rounded   inline-block font-semibold leading-none py-2 px-3.5 text-sm text-left md:text-center rounded hover:shadow-md mr-2 mt-1 cursor-pointer ">
+                                          <span>{{tag}}</span>
+                                      </div> -->
+                  {% endfor %}
+                                                {% comment %} <div
+                                                    class=" grid grid-cols-1 md:flex flex-wrap  gap-4  justify-between items-center !items-start">
+
+                                                    
+                                                    <div class="mb-2 md:mb-0 w-full">
+                                                        <div title="BPL"
+                                                            class=" text-gray-800 bg-gray-200 rounded   inline-block font-semibold leading-none py-2 px-3.5 text-sm text-left md:text-center rounded hover:shadow-md mr-2 mt-1 cursor-pointer ">
+                                                            {{object.tag}}</div>
+                                                
+                                                    </div>
+                                                    <div class="flex-none md:w-1/3 sm:hidden">
+                                                        <div
+                                                            class=" flex items-center  gap-4  justify-between items-center md:justify-end">
+                                                            <div
+                                                                class="flex flex-row items-center justify-center sm:hidden !gap-2">
+                                                                <div class=" relative">
+                                                                    <div class="flex flex-wrap">
+                                                                        <div class="w-full text-center"><button
+                                                                                id="popContainer1" title="Copy"
+                                                                                class="active:bg-indigo-600 border border-solid w-8 h-8 flex justify-center items-center rounded-full hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150 bg-transparent border-amber-200 hover:border-amber-300 text-amber-600"
+                                                                                type="button"><svg stroke="currentColor"
+                                                                                    fill="none" stroke-width="2"
+                                                                                    viewBox="0 0 24 24"
+                                                                                    stroke-linecap="round"
+                                                                                    stroke-linejoin="round" height="16"
+                                                                                    width="16"
+                                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                                    <path
+                                                                                        d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71">
+                                                                                    </path>
+                                                                                    <path
+                                                                                        d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71">
+                                                                                    </path>
+                                                                                </svg></button></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class=" relative">
+                                                                    <div class="flex flex-wrap">
+                                                                        <div class="w-full text-center"><button
+                                                                                id="popContainer2" title="Share"
+                                                                                class="active:bg-indigo-600 border border-solid w-8 h-8 flex justify-center items-center rounded-full hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150 bg-transparent border-fuchsia-200 hover:border-fuchsia-300 text-fuchsia-600"
+                                                                                type="button"><svg stroke="currentColor"
+                                                                                    fill="currentColor" stroke-width="0"
+                                                                                    viewBox="0 0 24 24" height="16"
+                                                                                    width="16"
+                                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                                    <path fill="none" d="M0 0h24v24H0z">
+                                                                                    </path>
+                                                                                    <path
+                                                                                        d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z">
+                                                                                    </path>
+                                                                                </svg></button></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div> {% endcomment %}
+                                            </div>
+                                        </div>
+                                        <div class="flex
+            gap-3 
+            p-3 md:px-6 py-4 m-0  "><button aria-label="Secondary Button" class=" px-5 py-2.5 text-base  rounded-md   undefined undefined bg-indigo-50 text-indigo-600 hover:bg-indigo-100 hover:text-indigo-700  transition ease-in-out font-medium leading-none rounded-md 
+                undefined " title="">Check Eligibility</button></div>
+                                        </div>
+                                    </div>
+                                <div id="details" class="pt-10">
+                                    <h3
+                                        class="text-lg md:text-2xl sm:text-xl text-blue-900 font-semibold font-heading undefined">
+                                        Details</h3>
+                                    <div
+                                        class=" grid grid-cols-1 md:flex flex-wrap  gap-4  justify-between items-center !items-start w-full mt-6 bg-white rounded-2xl p-8 !gap-8 shadow ">
+                                        <div class=" flex-1 ">
+                                            <div class="markdown-options " data-slate-editor="true" data-slate-node="value"
+                                                contenteditable="false" zindex="-1"
+                                                style="position: relative; outline: none; white-space: pre-wrap; overflow-wrap: break-word;">
+                                                <div class="mb-2 text-left" data-slate-node="element"><span
+                                                        data-slate-node="text"><span data-slate-leaf="true" class=" undefined undefined undefined 
+      
+            "><span data-slate-string="true">{{ object.details }}</span></span></span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div id="benefits" class="pt-10">
+                                    <h3
+                                        class="text-lg md:text-2xl sm:text-xl text-blue-900 font-semibold font-heading undefined">
+                                        Benefits</h3>
+                                    <div
+                                        class=" grid grid-cols-1 md:flex flex-wrap  gap-4  justify-between items-center !items-start w-full mt-6 bg-white rounded-2xl p-8 !gap-8 shadow ">
+                                        <div><span
+                                                style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
+                                                    style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
+                                                        alt="" aria-hidden="true"
+                                                        src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2740%27%20height=%2740%27/%3e"
+                                                        style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span><img
+                                                    alt="Benefits Icon" title="Benefits Icon"
+                                                    src="https://cdn.myscheme.in/images/icons/benefits.svg" decoding="async"
+                                                    data-nimg="intrinsic" class="border-0 opacity-60 "
+                                                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                                                    srcset="https://cdn.myscheme.in/images/icons/benefits.svg 1x, https://cdn.myscheme.in/images/icons/benefits.svg 2x"><noscript></noscript></span>
+                                        </div>
+                                        <div class=" flex-1 ">
+                                            <div class="markdown-options " data-slate-editor="true" data-slate-node="value"
+                                                contenteditable="false" zindex="-1"
+                                                style="position: relative; outline: none; white-space: pre-wrap; overflow-wrap: break-word;">
+                                                <h4 data-slate-node="element" class="text-left"><span
+                                                        data-slate-node="text"><span data-slate-leaf="true" class=" undefined undefined undefined 
+      
+    "><span data-slate-string="true">Skilling and placement under DDU-GKY involve eight distinct steps:
+                                                            </span></span></span></h4>
+                                                <ol type="1" data-slate-node="element" class="text-left">
+                                                    <li data-slate-node="element" class="text-left"><span
+                                                            data-slate-node="text"><span data-slate-leaf="true" class=" undefined undefined undefined 
+      
+    "><span data-slate-string="true">Awareness building within the community on the opportunities </span></span></span>
+                                                    </li>
+                                                    <li data-slate-node="element" class="text-left"><span
+                                                            data-slate-node="text"><span data-slate-leaf="true" class=" undefined undefined undefined 
+      
+    "><span data-slate-string="true">Identifying rural youth who are poor </span></span></span></li>
+                                                    <li data-slate-node="element" class="text-left"><span
+                                                            data-slate-node="text"><span data-slate-leaf="true" class=" undefined undefined undefined 
+      
+    "><span data-slate-string="true">Mobilizing rural youth who are interested </span></span></span></li>
+                                                    <li data-slate-node="element" class="text-left"><span
+                                                            data-slate-node="text"><span data-slate-leaf="true" class=" undefined undefined undefined 
+      
+    "><span data-slate-string="true">Counselling of youth and parents </span></span></span></li>
+                                                    <li data-slate-node="element" class="text-left"><span
+                                                            data-slate-node="text"><span data-slate-leaf="true" class=" undefined undefined undefined 
+      
+    "><span data-slate-string="true">Selection based on aptitude vi. Imparting knowledge, industry-linked skills, and
+                                                                    attitudes that enhance employability
+                                                                </span></span></span></li>
+                                                    <li data-slate-node="element" class="text-left"><span
+                                                            data-slate-node="text"><span data-slate-leaf="true" class=" undefined undefined undefined 
+      
+    "><span data-slate-string="true">Providing jobs that can be verified through methods that can stand up to independent
+                                                                    scrutiny, and which pay above minimum wages
+                                                                </span></span></span></li>
+                                                    <li data-slate-node="element" class="text-left"><span
+                                                            data-slate-node="text"><span data-slate-leaf="true" class=" undefined undefined undefined 
+      
+    "><span data-slate-string="true">Supporting the person so employed for sustainability after placement
+                                                                </span></span></span></li>
+                                                </ol>
+                                                <ol type="1" data-slate-node="element" class="text-left">
+                                                    <div class="mb-2 text-left" data-slate-node="element"><span
+                                                            data-slate-node="text"><span data-slate-leaf="true" class=" undefined undefined undefined 
+      
+    "><span data-slate-zero-width="n" data-slate-length="0">﻿<br></span></span></span></div>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <div id="eligibility" class="pt-10">
+                                    <h3
+                                        class="text-lg md:text-2xl sm:text-xl text-blue-900 font-semibold font-heading undefined">
+                                        Eligibility</h3>
+                                    <div
+                                        class=" grid grid-cols-1 md:flex flex-wrap  gap-4  justify-between items-center !items-start w-full mt-6 bg-white rounded-2xl p-8 !gap-8 shadow ">
+                                        <div><span
+                                                style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
+                                                    style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
+                                                        alt="" aria-hidden="true"
+                                                        src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2740%27%20height=%2740%27/%3e"
+                                                        style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span><img
+                                                    alt="Benefits Icon" title="Benefits Icon"
+                                                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                                    decoding="async" data-nimg="intrinsic" class="border-0 opacity-60 "
+                                                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"><noscript></noscript></span>
+                                        </div>
+                                        <div class=" flex-1 ">
+                                            <div class="markdown-options " data-slate-editor="true" data-slate-node="value"
+                                                contenteditable="false" zindex="-1"
+                                                style="position: relative; outline: none; white-space: pre-wrap; overflow-wrap: break-word;">
+                                                <div class="mb-2 text-left" data-slate-node="element"><span
+                                                        data-slate-node="text"><span data-slate-leaf="true" class=" undefined undefined undefined 
+      
+    "><span data-slate-string="true">{{object.eligibility}}</span></span></span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div id="applicationProcess" class="pt-10">
+                                    <h3
+                                        class="text-lg md:text-2xl sm:text-xl text-blue-900 font-semibold font-heading undefined">
+                                        Application Process</h3>
+                                    <div
+                                        class=" grid grid-cols-1 md:flex flex-wrap  gap-4  justify-between items-center !items-start w-full mt-6 bg-white rounded-2xl p-8 !gap-8 shadow ">
+                                        <div class=" flex-1 ">
+                                            <div class=" undefined">
+                                                <div
+                                                    class="overflow-x-auto overflow-y-hidden flex flex-row items-center mb-2 border-0 border-b border-solid border-gray-200 px-2 md:px-4">
+                                                    <div
+                                                        class="px-4 py-2 flex items-start justify-center bg-white capitalize border-0 border-b-3 border-solid border-green-600 undefined">
+                                                        <span
+                                                            class="text-md leading-8   text-gray-700 capitalize font-heading whitespace-nowrap font-semibold ">online</span>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="rounded py-4 px-4">
+                                                        <div class="markdown-options " data-slate-editor="true"
+                                                            data-slate-node="value" contenteditable="false" zindex="-1"
+                                                            style="position: relative; outline: none; white-space: pre-wrap; overflow-wrap: break-word;">
+                                                            <div class="mb-2 text-left" data-slate-node="element"><span
+                                                                    data-slate-node="text"><span data-slate-leaf="true"
+                                                                        class=" undefined undefined undefined 
+      
+    "><span data-slate-string="true">The interested eligible person shall visit nearest Self Enrollment via
+                                                                            link:</span></span></span></div>
+                                                            <div class="mb-2 text-left" data-slate-node="element"><span
+                                                                    data-slate-node="text"><span data-slate-leaf="true"
+                                                                        class=" undefined undefined undefined 
+      
+    "><span data-slate-zero-width="n" data-slate-length="0">﻿<br></span></span></span></div>
+                                                            <ol type="1" data-slate-node="element" class="text-left">
+                                                                <li data-slate-node="element" class="text-left"><span
+                                                                        data-slate-node="text"><span data-slate-leaf="true"
+                                                                            class=" undefined undefined undefined 
+      
+    "><span data-slate-string="true">Select the Registration type (Fresh Registration/ Incomplete /
+                                                                                Registered)</span></span></span></li>
+                                                                <li data-slate-node="element" class="text-left"><span
+                                                                        data-slate-node="text"><span data-slate-leaf="true"
+                                                                            class=" undefined undefined undefined 
+      
+    "><span data-slate-string="true">Fill in SECC Details</span></span></span></li>
+                                                                <li data-slate-node="element" class="text-left"><span
+                                                                        data-slate-node="text"><span data-slate-leaf="true"
+                                                                            class=" undefined undefined undefined 
+      
+    "><span data-slate-string="true">Fill Address Information</span></span></span></li>
+                                                                <li data-slate-node="element" class="text-left"><span
+                                                                        data-slate-node="text"><span data-slate-leaf="true"
+                                                                            class=" undefined undefined undefined 
+      
+    "><span data-slate-string="true">Fill Personal Information - </span></span></span></li>
+                                                                <li data-slate-node="element" class="text-left"><span
+                                                                        data-slate-node="text"><span data-slate-leaf="true"
+                                                                            class=" undefined undefined undefined 
+      
+    "><span data-slate-string="true">Fill Training program Details </span></span></span></li>
+                                                                <li data-slate-node="element" class="text-left"><span
+                                                                        data-slate-node="text"><span data-slate-leaf="true"
+                                                                            class=" undefined undefined undefined 
+      
+    "><span data-slate-string="true">Fill in Choices of candidates for a particular sector</span></span></span></li>
+                                                                <li data-slate-node="element" class="text-left"><span
+                                                                        data-slate-node="text"><span data-slate-leaf="true"
+                                                                            class=" undefined undefined undefined 
+      
+    "><span data-slate-string="true">Submit the application form </span></span></span></li>
+                                                            </ol>
+                                                            <div class="mb-2 text-left" data-slate-node="element"><span
+                                                                    data-slate-node="text"><span data-slate-leaf="true"
+                                                                        class=" undefined undefined undefined 
+      
+    "><span data-slate-zero-width="n" data-slate-length="0">﻿<br></span></span></span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <!-- <div id="documentsRequired" class="pt-10">
+                                    <h3
+                                        class="text-lg md:text-2xl sm:text-xl text-blue-900 font-semibold font-heading undefined">
+                                        Documents Required</h3>
+                                    <div
+                                        class=" grid grid-cols-1 md:flex flex-wrap  gap-4  justify-between items-center !items-start w-full mt-6 bg-white rounded-2xl p-8 !gap-8 shadow ">
+                                        <div><span
+                                                style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
+                                                    style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
+                                                        alt="" aria-hidden="true"
+                                                        src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2740%27%20height=%2740%27/%3e"
+                                                        style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span><img
+                                                    alt="Benefits Icon" title="Benefits Icon"
+                                                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                                    decoding="async" data-nimg="intrinsic" class="border-0 opacity-60 "
+                                                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"><noscript></noscript></span>
+                                        </div>
+                                        <div class=" flex-1 ">
+                                            <div class="markdown-options " data-slate-editor="true" data-slate-node="value"
+                                                contenteditable="false" zindex="-1"
+                                                style="position: relative; outline: none; white-space: pre-wrap; overflow-wrap: break-word;">
+                                                <ol type="1" data-slate-node="element" class="text-left">
+                                                    <li data-slate-node="element" class="text-left"><span
+                                                            data-slate-node="text"><span data-slate-leaf="true" class=" undefined undefined undefined 
+      
+    "><span data-slate-string="true">Driving License</span></span></span></li>
+                                                    <li data-slate-node="element" class="text-left"><span
+                                                            data-slate-node="text"><span data-slate-leaf="true" class=" undefined undefined undefined 
+      
+    "><span data-slate-string="true">One of the following:</span></span></span></li>
+                                                </ol>
+                                                <ul data-slate-node="element" class="text-left">
+                                                    <li data-slate-node="element" class="text-left"><span
+                                                            data-slate-node="text"><span data-slate-leaf="true" class=" undefined undefined undefined 
+      
+    "><span data-slate-string="true">BPL Card</span></span></span></li>
+                                                    <li data-slate-node="element" class="text-left"><span
+                                                            data-slate-node="text"><span data-slate-leaf="true" class=" undefined undefined undefined 
+      
+    "><span data-slate-string="true">MNREGA Card</span></span></span></li>
+                                                    <li data-slate-node="element" class="text-left"><span
+                                                            data-slate-node="text"><span data-slate-leaf="true" class=" undefined undefined undefined 
+      
+    "><span data-slate-string="true">NRLM - SHG Identification Card</span></span></span></li>
+                                                    <li data-slate-node="element" class="text-left"><span
+                                                            data-slate-node="text"><span data-slate-leaf="true" class=" undefined undefined undefined 
+      
+    "><span data-slate-string="true">BPL / PDS Card or Antyoday Anna Yojana Card</span></span></span></li>
+                                                    <li data-slate-node="element" class="text-left"><span
+                                                            data-slate-node="text"><span data-slate-leaf="true" class=" undefined undefined undefined 
+      
+    "><span data-slate-string="true">PIP</span></span></span></li>
+                                                    <li data-slate-node="element" class="text-left"><span
+                                                            data-slate-node="text"><span data-slate-leaf="true" class=" undefined undefined undefined 
+      
+    "><span data-slate-string="true">Voter Id</span></span></span></li>
+                                                    <div class="mb-2 text-left" data-slate-node="element"><span
+                                                            data-slate-node="text"><span data-slate-leaf="true" class=" undefined undefined undefined 
+      
+    "><span data-slate-zero-width="n" data-slate-length="0">﻿<br></span></span></span></div>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="faqs" class="pt-10">
+                                    <h3
+                                        class="text-lg md:text-2xl sm:text-xl text-blue-900 font-semibold font-heading undefined">
+                                        Frequently Asked Questions</h3>
+                                    <div
+                                        class=" grid grid-cols-1 md:flex flex-wrap  gap-4  justify-between items-center !items-start w-full mt-6 bg-white rounded-2xl p-8 !gap-8 shadow ">
+                                        <div class=" flex-1 ">
+                                            <div class="py-4 first:pt-0 last:pb-0 undefined">
+                                                <div class="cursor-pointer undefined">
+                                                    <div class="flex flex-row items-center justify-between">
+                                                        <p class="font-bold w-11/12"> I am a transgender, Can I apply for
+                                                            the scheme?</p><svg stroke="currentColor" fill="currentColor"
+                                                            stroke-width="0" viewBox="0 0 20 20" class="ml-1" height="25"
+                                                            width="25" xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd"
+                                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                                clip-rule="evenodd"></path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="rounded-b mt-3 hidden ">
+                                                    <p class="text-base leading-relaxed">Yes, you are eligible to apply for
+                                                        the scheme. </p>
+                                                </div>
+                                            </div>
+                                            <div class="py-4 first:pt-0 last:pb-0 undefined">
+                                                <div class="cursor-pointer undefined">
+                                                    <div class="flex flex-row items-center justify-between">
+                                                        <p class="font-bold w-11/12">What kind of Training is provided? Is
+                                                            it for Wage employment or Self- Employment?</p><svg
+                                                            stroke="currentColor" fill="currentColor" stroke-width="0"
+                                                            viewBox="0 0 20 20" class="ml-1" height="25" width="25"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd"
+                                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                                clip-rule="evenodd"></path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="rounded-b mt-3 hidden ">
+                                                    <p class="text-base leading-relaxed">The training is provided for both
+                                                        kind of employments based on candidates interest.</p>
+                                                </div>
+                                            </div>
+                                            <div class="py-4 first:pt-0 last:pb-0 undefined">
+                                                <div class="cursor-pointer undefined">
+                                                    <div class="flex flex-row items-center justify-between">
+                                                        <p class="font-bold w-11/12">Can I undergo only skilling and skip
+                                                            placement?</p><svg stroke="currentColor" fill="currentColor"
+                                                            stroke-width="0" viewBox="0 0 20 20" class="ml-1" height="25"
+                                                            width="25" xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd"
+                                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                                clip-rule="evenodd"></path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="rounded-b mt-3 hidden ">
+                                                    <p class="text-base leading-relaxed">Yes, the scheme allows you to only
+                                                        undergo skilling.</p>
+                                                </div>
+                                            </div>
+                                            <div class="py-4 first:pt-0 last:pb-0 undefined">
+                                                <div class="cursor-pointer undefined">
+                                                    <div class="flex flex-row items-center justify-between">
+                                                        <p class="font-bold w-11/12">Can I select the sector/trade in which
+                                                            I intend to skill</p><svg stroke="currentColor"
+                                                            fill="currentColor" stroke-width="0" viewBox="0 0 20 20"
+                                                            class="ml-1" height="25" width="25"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd"
+                                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                                clip-rule="evenodd"></path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="rounded-b mt-3 hidden ">
+                                                    <p class="text-base leading-relaxed">Yes, the application form provides
+                                                        you 3 choices to opt out of many options of sector/trade for
+                                                        training.</p>
+                                                </div>
+                                            </div>
+                                            <div class="py-4 first:pt-0 last:pb-0 undefined">
+                                                <div class="cursor-pointer undefined">
+                                                    <div class="flex flex-row items-center justify-between">
+                                                        <p class="font-bold w-11/12">I do not belong to SC category, but I
+                                                            am poor youth, Am I eligible?</p><svg stroke="currentColor"
+                                                            fill="currentColor" stroke-width="0" viewBox="0 0 20 20"
+                                                            class="ml-1" height="25" width="25"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd"
+                                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                                clip-rule="evenodd"></path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="rounded-b mt-3 hidden ">
+                                                    <p class="text-base leading-relaxed">Yes, you are eligible for the
+                                                        scheme.</p>
+                                                </div>
+                                            </div>
+                                            <div class="py-4 first:pt-0 last:pb-0 undefined">
+                                                <div class="cursor-pointer undefined">
+                                                    <div class="flex flex-row items-center justify-between">
+                                                        <p class="font-bold w-11/12">What is the income limit for the
+                                                            scheme?</p><svg stroke="currentColor" fill="currentColor"
+                                                            stroke-width="0" viewBox="0 0 20 20" class="ml-1" height="25"
+                                                            width="25" xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd"
+                                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                                clip-rule="evenodd"></path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="rounded-b mt-3 hidden ">
+                                                    <p class="text-base leading-relaxed">Income limit has not been specified
+                                                        but the identification of the poor shall be done by a process of
+                                                        Participatory Identification of Poor - NRLM Strategy.</p>
+                                                </div>
+                                            </div>
+                                            <div class="py-4 first:pt-0 last:pb-0 undefined">
+                                                <div class="cursor-pointer undefined">
+                                                    <div class="flex flex-row items-center justify-between">
+                                                        <p class="font-bold w-11/12"> I have Rashtra Swastha Bima Yojana
+                                                            card, Can I apply ?</p><svg stroke="currentColor"
+                                                            fill="currentColor" stroke-width="0" viewBox="0 0 20 20"
+                                                            class="ml-1" height="25" width="25"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd"
+                                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                                clip-rule="evenodd"></path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="rounded-b mt-3 hidden ">
+                                                    <p class="text-base leading-relaxed">Yes, You are eligible for the
+                                                        scheme</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <div id="sources" class="pt-10">
+                                    <h3
+                                        class="text-lg md:text-2xl sm:text-xl text-blue-900 font-semibold font-heading undefined">
+                                        Sources And References</h3>
+                                    <div
+                                        class=" grid grid-cols-1 md:flex flex-wrap  gap-4  justify-between items-center !items-start w-full mt-6 bg-white rounded-2xl p-8 !gap-8 shadow ">
+                                        <div class=" flex-1 ">
+                                            <p class="article-content">{{ object.reference }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div id="feedback" class="pt-10">
+                                    <div class="flex flex-row items-center justify-center w-full ">
+                                        <div
+                                            class=" h-screen w-screen bg-black/20 fixed top-0 left-0 z-[50] opacity-0 hidden transform transition-all ease-in-out  ">
+                                            <div class="relative flex flex-col items-center justify-center h-full">
+                                                <div
+                                                    class="relative bg-white rounded-lg shadow max-w-[90%] md:max-w-[60%] lg:min-w-[30%] max-h-[80vh] overflow-auto">
+                                                    <div class="p-8 text-center"><svg stroke="currentColor"
+                                                            fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
+                                                            class="mx-auto w-10 h-10 mb-3  text-red-600" height="1em"
+                                                            width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill="none" d="M0 0h24v24H0z"></path>
+                                                            <path
+                                                                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+                                                            </path>
+                                                        </svg>
+                                                        <h3 class=" font-normal text-gray-800"></h3>
+                                                    </div>
+                                                    <div class="bg-gray-100 p-4 flex justify-center rounded-b-lg">
+                                                        <div class="flex
+         gap-2 
+         justify-center w-full "><button type="button" aria-label="White Button" class=" px-5 py-2.5 text-base  rounded-md   undefined undefined bg-white border-solid border border-cyan-200 text-gray-800 hover:border-cyan-400 hover:shadow   transition ease-in-out font-medium leading-none flex-none 
+            undefined " title="">Ok</button></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col items-center justify-center w-full mx-6 "><span
+                                                class=" font-heading text-sm sm:text-base text-darkIndigo-900">Was this
+                                                helpful?</span>
+                                            <div class="flex flex-row items-center"><button type="button"
+                                                    class="`border-0 cursor-pointer transform transition duration-300 hover:scale-125 mx-2 my-2 "><svg
+                                                        stroke="currentColor" fill="currentColor" stroke-width="0"
+                                                        viewBox="0 0 576 512" class="text-green-600" height="25" width="25"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z">
+                                                        </path>
+                                                    </svg></button><button type="button"
+                                                    class="`border-0 cursor-pointer transform transition duration-300 hover:scale-125 mx-2 my-2 "><svg
+                                                        stroke="currentColor" fill="currentColor" stroke-width="0"
+                                                        viewBox="0 0 576 512" class="text-green-600" height="25" width="25"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z">
+                                                        </path>
+                                                    </svg></button><button type="button"
+                                                    class="`border-0 cursor-pointer transform transition duration-300 hover:scale-125 mx-2 my-2 "><svg
+                                                        stroke="currentColor" fill="currentColor" stroke-width="0"
+                                                        viewBox="0 0 576 512" class="text-green-600" height="25" width="25"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z">
+                                                        </path>
+                                                    </svg></button><button type="button"
+                                                    class="`border-0 cursor-pointer transform transition duration-300 hover:scale-125 mx-2 my-2 "><svg
+                                                        stroke="currentColor" fill="currentColor" stroke-width="0"
+                                                        viewBox="0 0 576 512" class="text-green-600" height="25" width="25"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z">
+                                                        </path>
+                                                    </svg></button><button type="button"
+                                                    class="`border-0 cursor-pointer transform transition duration-300 hover:scale-125 mx-2 my-2 "><svg
+                                                        stroke="currentColor" fill="currentColor" stroke-width="0"
+                                                        viewBox="0 0 576 512" class="text-green-600" height="25" width="25"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z">
+                                                        </path>
+                                                    </svg></button></div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+    
+                    </div>
+    
+    
+      {% comment %} <h2 class="article-title">{{ object.name }}</h2>
       <p class="article-content">{{ object.details }}</p>
       <h2>Eligibility</h2>
       <p class="article-content">{{ object.eligibility }}</p>
 
       <h2>Reference</h2>
-      <p class="article-content">{{ object.reference }}</p>
+      <p class="article-content">{{ object.reference }}</p> {% endcomment %}
     </div>
   </article>
 {% endblock content %}

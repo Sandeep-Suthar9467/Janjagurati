@@ -1,6 +1,6 @@
 {% extends "schemes/base.html" %} {% block content %}
 
-<div class="grid grid-cols-4 gap-4 container mx-auto px-4 sm:px-0 relative">
+<div class="grid grid-cols-4 gap-4 container mx-auto px-4 sm:px-0 relative" style='margin-top:100px'>
   <div class="sm:col-span-1 sm:block hidden">
     <div class="bg-white rounded-md shadow-sm p-4 sticky top-24">
       <div>
@@ -623,34 +623,43 @@
     >
       <input
         type="text"
-        name="query"
+        name="search-area"
         class="w-full h-full pr-12 border border-solid border-gray-200 rounded-md bg-white hover:border-green-700 focus:border-green-700 focus:outline-none"
         placeholder="Search"
         value="{{search_input}}"
+        onkeyup="{{search_input}}"
       />
-      <button
-        disabled=""
-        class="absolute right-0 h-10 outline-none rounded-tr-md rounded-br-md rounded-bl-3xl bg-green-600 px-4 py-2 cursor-not-allowed"
-        aria-label="Search"
+      <input
+        class="absolute right-0 h-10 outline-none rounded-tr-md rounded-br-md rounded-bl-3xl px-4 py-2"
+        {% comment %} aria-label="Search" {% endcomment %}
         type="submit"
-        value="Search"
+        {% comment %} value="Search" {% endcomment %}
+        value=''
+        style="border-radius: 100%"
+      ><div
+      
       >
-        <svg
-          stroke="currentColor"
-          fill="currentColor"
-          stroke-width="0"
-          viewBox="0 0 512 512"
-          class="text-white"
-          height="1em"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
-          ></path>
-        </svg>
-      </button>
-    </form>
+
+      <svg
+      stroke="currentColor"
+      fill="currentColor"
+      stroke-width="0"
+      viewBox="0 0 512 512"
+      class="text-black/20"
+      height="1em"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+      ></path>
+    </svg>
+  </div>
+
+</input>
+      
+    </form> 
+  
     <div
       class="fixed bottom-0 left-0 right-0 sm:hidden border-0 border-t border-solid border-gray-200"
     >
@@ -700,7 +709,7 @@
         <div class="flex flex-wrap items-center gap-2 ml-2">
           <div class="text-base font-medium text-cyan-700 mb-0">
             We found
-            <span class="text-lg font-bold text-blue-900 font-heading">10</span>
+            <span class="text-lg font-bold text-blue-900 font-heading">{{schemes|length}}</span>
             schemes based on your preferences
           </div>
         </div>
@@ -818,7 +827,7 @@
                   <a
                     href="{% url 'tagged' tag.slug %}"
                     class="mr-1 badge badge-info"
-                    >#{{ tag }}</a
+                    >{{ tag }}</a
                   >
                   <!-- <div title="Agricultural Inputs"
                                           class=" text-gray-800 bg-gray-200 rounded   inline-block font-semibold leading-none py-2 px-3.5 text-sm text-left md:text-center rounded hover:shadow-md mr-2 mt-1 cursor-pointer ">

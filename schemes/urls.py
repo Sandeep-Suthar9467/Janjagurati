@@ -13,4 +13,5 @@ urlpatterns = [
     path("schemes/<slug:slug>/",SchemeDetailView.as_view(), name='schemedetail'),
     path('add-scheme/',SchemeAdd.as_view(),name = 'addscheme'),
     path('tagged/<slug:slug>',tagged,name='tagged')
+    
 ]

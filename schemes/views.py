@@ -38,21 +38,24 @@ class SchemeListView(ListView):
         # paginate_by = 8
         context['title'] = 'Search Schemes'
         context['search_input']= search_input
-        print(context)
+        print('Checking',search_input,context)
         return context
     def get_queryset(self):
         # user = get_object_or_404(User, username=self.kwargs.get('username'))
         search_input = self.request.GET.get('search-area') or ''
         return Schemes.objects.filter(details__icontains=search_input).order_by('-uploadDate')
 
+    
+
 class SchemeDetailView(DetailView):
     model = Schemes
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     print(context)
-    #     context["title"] = context['schemes'].objects
-    #     print(context['schemes'])
-    #     return context
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        print(context,'Hello')
+        # context["title"] = context['schemes'].objects
+        fields = ['title','name','brief','eligibility','references','slug','tags','details','category','subcategory','openDate','closeDate']
+        context['fields']=fields
+        return context
 
 class SchemeAdd(CreateView):
     model = Schemes
